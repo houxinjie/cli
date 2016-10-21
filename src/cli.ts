@@ -4,6 +4,6 @@ import * as commander from 'commander'
 
 commander
     .version(require('../package.json').version)
-    .usage('<command> <options>')
-    .command('new', 'generate a new project')
+    .usage('<command> [options]')
+    .command('new <projectName>', 'generate a new project')
     .parse(process.argv)
