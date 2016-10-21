@@ -10,7 +10,7 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "inlineSources": true,
-        "types": ["node"]
+        "types": []
     },
     "files": [
         "src/cli.ts",

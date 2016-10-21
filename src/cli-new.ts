@@ -5,6 +5,7 @@ import * as path from 'path'
 import * as chalk from 'chalk'
 import {exec} from 'child_process'
 import {existsSync} from 'fs'
+import ora = require('ora')
 
 const projectSeedUrl: string = 'https://github.com/alonewalked/vue-vuex-2-cli.git'
 
@@ -27,8 +28,13 @@ if (existsSync(projectPath)) {
 }
 
 const cmd: string = `git clone ${projectSeedUrl} ${projectName} && rm -rf ${path.join(projectPath, '.git')}`
+const spinner: any = ora('downloading template')
+spinner.start()
 
 exec(cmd, (error, stdout, stderror) => {
+
+    spinner.stop()
+
     if (error) {
         console.log(error)
         process.exit()
